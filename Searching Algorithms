@@ -1,0 +1,56 @@
+Binary Search: 
+->Binary Search is used to find specific element in a sorted list or sorted array.
+->Works on: Sorted data only.
+->Time Complexity: O(log n)
+
+Code:
+public class BinarySearch {
+	public static void main(String[] args) {
+		int[] arr= {1,2,3,4,5,6,7,8,9,10};
+		int search=7;
+		binary_Search(arr,search);
+	}
+	
+	static void binary_Search(int[] arr,int search) {
+		int li=0,hi=arr.length-1;
+		
+		while(li<=hi) {
+			int mid=(li+hi)/2;
+		if(arr[mid]==search) {
+			System.out.println("the value present in the index:"+mid);
+			return;
+		}else if(arr[mid]<search) {
+			li=mid+1;
+		}else {
+			hi=mid-1;
+		}
+	}
+		System.out.println("the value not present");
+	}
+
+}
+
+
+Linear Search:
+->Linear Search is used to find a specific value in a list or array,check each element one by one until you find the target.
+->Works on: Unsorted or sorted data.
+->Time Complexity: O(n)
+
+Code:
+public class LinearSearch {
+	public static void main(String[] args) {
+		int[] arr= {4,1,5,8,3,7,6,2};
+		int search=7;
+		linear_Search(arr,search);
+	}
+	static void linear_Search(int[] arr,int search) {
+		for(int i=0;i<arr.length;i++) {
+			if(arr[i]==search) {
+				System.out.println("the value is present in the index:"+i);
+				return;
+			}
+		}
+		System.out.println("the value is not present");
+	}
+
+}
